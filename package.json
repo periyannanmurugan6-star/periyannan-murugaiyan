@@ -1,0 +1,17 @@
+{
+  "name": "fitbuddy-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FitBuddy AI fitness dashboard and Gemini workout plan generator",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "nodemailer": "^10.0.13"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

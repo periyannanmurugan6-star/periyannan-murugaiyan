@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f8f5" />
+  <title>AI Fitness Coach — FitBuddy AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/chat-page.css" />
+</head>
+<body>
+  <div class="chat-app">
+    <aside class="chat-sidebar">
+      <a class="chat-brand" href="/"><span class="brand-mark">F</span><span>fit<span>buddy</span> AI</span></a>
+      <a class="back-dashboard" href="/">← <span>Dashboard</span></a>
+      <button class="new-chat-button" id="newChat" type="button"><span>＋</span> New chat</button>
+      <div class="history-heading">YOUR CHATS</div>
+      <nav class="chat-history-list" id="chatHistory" aria-label="Saved conversations">
+        <p class="history-loading">Loading your chats...</p>
+      </nav>
+      <div class="chat-sidebar-footer">
+        <div class="chat-avatar" id="sidebarAvatar">P</div>
+        <div class="chat-user-details"><strong id="sidebarUserName">FitBuddy AI member</strong><small id="sidebarUserId"></small></div>
+        <button class="chat-logout" id="logout" type="button" aria-label="Sign out" title="Sign out">↪</button>
+      </div>
+    </aside>
+
+    <main class="chat-main">
+      <header class="chat-topbar">
+        <div class="coach-identity"><span class="coach-avatar">✧</span><div><strong>AI Fitness &amp; Health Coach</strong><small><i></i> Ready to help</small></div></div>
+        <a href="/" class="mobile-dashboard-link">Dashboard</a>
+      </header>
+
+      <section class="conversation" aria-label="Fitness coach conversation">
+        <div class="message-list" id="messageList" aria-live="polite">
+          <div class="welcome-state" id="welcomeState">
+            <div class="welcome-mark">✧</div>
+            <span class="eyebrow">YOUR PERSONAL FITNESS ASSISTANT</span>
+            <h1>Hi <span id="welcomeName">there</span>,<br />what would you like to work on?</h1>
+            <p>Ask about workouts, exercise, nutrition, recovery, or general body-health questions. The coach gives general information, not a diagnosis. Your chats are saved to your account.</p>
+            <div class="prompt-grid">
+              <button class="prompt-card" type="button" data-prompt="Create a beginner workout for my fitness goal"><strong>Plan a workout</strong><span>Build a comfortable routine for my goal</span><b>↗</b></button>
+              <button class="prompt-card" type="button" data-prompt="Give me nutrition tips to support my fitness goal"><strong>Nutrition tips</strong><span>Get practical, general food guidance</span><b>↗</b></button>
+              <button class="prompt-card" type="button" data-prompt="How should I recover after exercise?"><strong>Recovery advice</strong><span>Ask about rest and staying consistent</span><b>↗</b></button>
+              <button class="prompt-card" type="button" data-prompt="Help me stay motivated with my fitness plan"><strong>Build consistency</strong><span>Find small steps that fit my routine</span><b>↗</b></button>
+            </div>
+          </div>
+        </div>
+
+        <form class="message-composer" id="chatForm">
+          <label class="visually-hidden" for="chatInput">Message your fitness coach</label>
+          <textarea id="chatInput" name="message" rows="1" maxlength="1200" placeholder="Ask about fitness, exercise, recovery, or general health..." required></textarea>
+          <div class="composer-footer"><small>General health and fitness information, not a diagnosis. For emergencies, contact local emergency services.</small><button id="sendMessage" type="submit" aria-label="Send message">↑</button></div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <div class="chat-toast" id="chatToast" role="status" aria-live="polite"></div>
+  <script src="/chat-page.js"></script>
+</body>
+</html>

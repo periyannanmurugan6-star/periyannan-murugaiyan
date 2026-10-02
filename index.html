@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitBuddy AI — Your personal fitness plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="profile.css" />
+  <link rel="stylesheet" href="plan.css" />
+  <link rel="stylesheet" href="progression.css" />
+  <link rel="stylesheet" href="nutrition.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">F</span><span>fit<span>buddy</span> AI</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#"><span class="nav-icon">⌂</span>Dashboard</a>
+        <a class="nav-link" href="#workouts"><span class="nav-icon">✦</span>Workouts</a>
+        <a class="nav-link" href="#personal-plan"><span class="nav-icon">▦</span>My plan</a>
+        <a class="nav-link" href="/chat"><span class="nav-icon">✧</span>AI Coach</a>
+        <a class="nav-link" href="#nutrition"><span class="nav-icon">◌</span>Nutrition</a>
+        <a class="nav-link" href="#progress"><span class="nav-icon">↗</span>Progress</a>
+        <a class="nav-link" href="#profile"><span class="nav-icon">♙</span>My profile</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a class="nav-link" href="#"><span class="nav-icon">⚙</span>Settings</a>
+        <div class="upgrade-card">
+          <div class="upgrade-spark">✦</div>
+          <strong>Unlock your full potential</strong>
+          <p>Get personalized plans with FitBuddy AI.</p>
+          <button class="upgrade-btn">Upgrade now <span>→</span></button>
+        </div>
+        <div class="profile-mini">
+          <div class="avatar">AK</div>
+          <div><strong>Alex Kim</strong><small>Free member</small></div>
+          <button class="more-btn" aria-label="More profile options">•••</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <button class="menu-btn" aria-label="Open menu">☰</button>
+        <div class="welcome"><p>Tuesday, September 29, 2026</p><h1>Good morning, Alex <span>👋</span></h1></div>
+        <div class="top-actions"><button class="icon-btn" id="logout" aria-label="Sign out" title="Sign out">↪</button><button class="icon-btn" aria-label="Notifications">♧<i></i></button><div class="avatar">AK</div></div>
+      </header>
+
+      <section class="hero">
+        <div><span class="eyebrow">YOUR DAILY MOTIVATION</span><h2>Small steps.<br /><em>Big results.</em></h2><p>Consistency is the key to unlocking your strongest self.</p><button class="primary-btn" id="startWorkout">Start a workout <span>→</span></button></div>
+        <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="figure">◒</div><div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div><span class="spark spark-a">✦</span><span class="spark spark-b">✧</span></div>
+      </section>
+
+      <section class="panel profile-panel" id="profile">
+        <div class="panel-heading"><div><span class="eyebrow">PERSONAL DETAILS</span><h3>Your fitness profile</h3></div></div>
+        <p class="profile-intro">Set up your details so your fitness journey feels personal to you.</p>
+        <form id="profileForm">
+          <div class="profile-fields">
+            <label class="field-label">Name<input name="name" type="text" autocomplete="name" maxlength="80" placeholder="Your name" required /></label>
+            <label class="field-label">Email ID<input name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required /></label>
+            <label class="field-label">Age<input name="age" type="number" min="13" max="120" inputmode="numeric" placeholder="Age" required /></label>
+            <label class="field-label">Weight (kg)<input name="weightKg" type="number" min="20" max="350" step="0.1" inputmode="decimal" placeholder="e.g. 65" required /></label>
+            <label class="field-label">Fitness goal
+              <select name="fitnessGoal" required>
+                <option value="" disabled selected>Choose your goal</option>
+                <option value="Lose weight">Lose weight</option>
+                <option value="Build muscle">Build muscle</option>
+                <option value="Improve endurance">Improve endurance</option>
+                <option value="Increase flexibility">Increase flexibility</option>
+                <option value="Stay active">Stay active</option>
+              </select>
+            </label>
+            <fieldset class="intensity-field">
+              <legend>Workout intensity</legend>
+              <label class="intensity-option"><input type="radio" name="workoutIntensity" value="Low" required /><span><strong>Low</strong><small>Gentle pace</small></span></label>
+              <label class="intensity-option"><input type="radio" name="workoutIntensity" value="High" /><span><strong>High</strong><small>More challenging</small></span></label>
+            </fieldset>
+          </div>
+          <div class="profile-form-footer"><span class="profile-save-status" aria-live="polite"></span><button class="primary-btn" type="submit">Save profile <span>→</span></button></div>
+        </form>
+      </section>
+
+      <section class="stats-grid" aria-label="Today's stats">
+        <article class="stat-card"><div class="stat-icon orange">♨</div><div><span>Calories burned</span><strong>642 <small>kcal</small></strong><div class="trend up">↑ 12% <small>vs last week</small></div></div></article>
+        <article class="stat-card"><div class="stat-icon purple">◷</div><div><span>Active minutes</span><strong>48 <small>min</small></strong><div class="trend up">↑ 8% <small>vs last week</small></div></div></article>
+        <article class="stat-card"><div class="stat-icon green">♧</div><div><span>Daily steps</span><strong>7,842 <small>steps</small></strong><div class="trend neutral">of 10,000 goal</div></div><div class="mini-progress"><i></i></div></article>
+      </section>
+
+      <div class="dashboard-grid">
+        <section class="panel activity-panel" id="progress">
+          <div class="panel-heading"><div><span class="eyebrow">ACTIVITY</span><h3>Weekly overview</h3></div><button class="select-btn">This week <span>⌄</span></button></div>
+          <div class="chart"><div class="y-labels"><span>800</span><span>600</span><span>400</span><span>200</span><span>0</span></div><div class="chart-area"><div class="grid-line line-1"></div><div class="grid-line line-2"></div><div class="grid-line line-3"></div><div class="grid-line line-4"></div><div class="grid-line line-5"></div><div class="bars"><div class="bar-col"><i style="height:43%"></i><span>Mon</span></div><div class="bar-col"><i style="height:64%"></i><span>Tue</span></div><div class="bar-col selected"><i style="height:82%"></i><b>642</b><span>Wed</span></div><div class="bar-col"><i style="height:56%"></i><span>Thu</span></div><div class="bar-col"><i style="height:72%"></i><span>Fri</span></div><div class="bar-col"><i style="height:31%"></i><span>Sat</span></div><div class="bar-col"><i style="height:17%"></i><span>Sun</span></div></div></div></div>
+        </section>
+        <section class="panel streak-panel">
+          <div class="panel-heading"><div><span class="eyebrow">YOUR STREAK</span><h3>Keep it going!</h3></div><span class="flame">♨</span></div>
+          <div class="streak-number">5 <small>days</small></div><p>You're on fire! Complete today's workout to reach a new personal best.</p><div class="week-dots"><span class="done">M</span><span class="done">T</span><span class="done">W</span><span class="done">T</span><span class="today">F</span><span>S</span><span>S</span></div><button class="outline-btn" id="viewProgress">View progress <span>→</span></button>
+        </section>
+      </div>
+
+      <section class="panel ai-chat-panel" id="ai-coach">
+        <div class="chat-heading">
+          <div><span class="eyebrow">YOUR PERSONAL FITNESS ASSISTANT</span><h3>AI Fitness Coach</h3><p>Start a new conversation or return to a saved chat.</p></div>
+          <a class="new-chat-btn" href="/chat"><span>✧</span> Open AI coach <span>→</span></a>
+        </div>
+      </section>
+
+      <section class="panel personal-plan-panel" id="personal-plan">
+        <div class="panel-heading"><div><span class="eyebrow">BUILT AROUND YOU</span><h3>Your personalized workout plan</h3></div><div class="plan-actions"><span class="plan-status" id="planStatus">Loading plan...</span><button class="generate-plan-btn" id="generateAiPlan" type="button">✧ Generate with Gemini</button></div></div>
+        <p class="plan-intro" id="planIntro">Your weekly routine will be based on your profile and fitness goal.</p>
+        <p class="plan-ai-note">AI-generated plans use your age, weight, fitness goal, and workout intensity with Google Gemini.</p>
+        <div class="plan-profile-facts" id="planProfileFacts" hidden></div>
+        <div class="plan-notice" id="planNotice" role="status" hidden></div>
+        <div class="plan-levels" id="planLevels"></div>
+        <div class="plan-week" id="planWeek"></div>
+        <p class="plan-age-note" id="planAgeNote" hidden></p>
+        <p class="plan-disclaimer" id="planDisclaimer" hidden>General fitness guidance only. Choose a comfortable pace, rest when needed, and consult a healthcare professional for personal medical advice.</p>
+      </section>
+
+      <section class="panel nutrition-panel" id="nutrition">
+        <div class="panel-heading"><div><span class="eyebrow">FUEL YOUR ROUTINE</span><h3>Nutrition tips for you</h3></div><span class="nutrition-goal" id="nutritionGoal">Personalized tips</span></div>
+        <p class="nutrition-intro" id="nutritionIntro">Simple food and hydration guidance to support your fitness goal and activity.</p>
+        <div class="nutrition-tips" id="nutritionTips"></div>
+        <p class="nutrition-disclaimer" id="nutritionDisclaimer">General nutrition information only, not a meal prescription. If you have a medical condition, food allergy, are pregnant, or need individual nutrition advice, consult a qualified healthcare professional or registered dietitian.</p>
+      </section>
+
+      <section class="panel workouts-panel" id="workouts">
+        <div class="panel-heading"><div><span class="eyebrow">UP NEXT</span><h3>Recommended workouts</h3></div><a href="#" class="view-all">View all <span>→</span></a></div>
+        <div class="workout-list">
+          <article class="workout-card"><div class="workout-image strength"><span>STRENGTH</span><strong>⚡</strong></div><div class="workout-info"><h4>Full body strength</h4><p>Build strength and confidence</p><div><span>⏱ 32 min</span><span>◉ Intermediate</span></div></div><button class="play-btn" aria-label="Start Full body strength">▶</button></article>
+          <article class="workout-card"><div class="workout-image yoga"><span>MOBILITY</span><strong>◌</strong></div><div class="workout-info"><h4>Morning mobility flow</h4><p>Wake up your body gently</p><div><span>⏱ 18 min</span><span>◉ Beginner</span></div></div><button class="play-btn" aria-label="Start Morning mobility flow">▶</button></article>
+          <article class="workout-card"><div class="workout-image cardio"><span>CARDIO</span><strong>↗</strong></div><div class="workout-info"><h4>Quick HIIT session</h4><p>Get your heart rate up</p><div><span>⏱ 24 min</span><span>◉ Advanced</span></div></div><button class="play-btn" aria-label="Start Quick HIIT session">▶</button></article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

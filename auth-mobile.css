@@ -1,0 +1,31 @@
+@media (max-width: 760px) {
+  .auth-page,
+  .auth-main {
+    min-height: 100svh;
+  }
+
+  .auth-main {
+    padding: max(28px, env(safe-area-inset-top)) 22px max(28px, env(safe-area-inset-bottom));
+  }
+
+  .auth-form input {
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .auth-submit,
+  .google-button {
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 360px) {
+  .auth-main {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .auth-card h2 {
+    font-size: 22px;
+  }
+}
